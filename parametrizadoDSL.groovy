@@ -1,4 +1,4 @@
-job('ejemplo2-job-DSL') {
+job('ejemplo-job-DSL') {
 	description('Job DSL de ejemplo para el curso de Jenkins')
   	scm {
       		git('https://github.com/andy-mc/jenkins.job.parametrizado.git', 'main') { node ->
@@ -18,14 +18,14 @@ job('ejemplo2-job-DSL') {
     		shell("bash jobscript.sh")
     	}
   	publishers {
-      		mailer('quemasandy@gmail.com', true, true)
-      		slackNotifier {
+      	  mailer('quemasandy@gmail.com', true, true)
+      	  slackNotifier {
 		  notifyAborted(true)
 		  notifyEveryFailure(true)
 		  notifyNotBuilt(false)
 		  notifyUnstable(false)
 		  notifyBackToNormal(true)
-		  notifySuccess(false)
+		  notifySuccess(true)
 		  notifyRepeatedFailure(false)
 		  startNotification(false)
 		  includeTestSummary(false)
@@ -35,6 +35,6 @@ job('ejemplo2-job-DSL') {
 		  commitInfoChoice('NONE')
 		  teamDomain(null)
 		  authToken(null)
-        	}
-    	}
+        }
+    }
 }

@@ -12,7 +12,7 @@ job('github-job-DSL') {
       		booleanParam('agente', false)
     	}
   	triggers {
-    		cron('H/7 * * * *')
+    		githubPush()
     	}
   	steps {
     		shell("bash jobscript.sh")

@@ -2,9 +2,9 @@
 echo "Bienvenido/a al planeta $planeta"
 if [ "$agente" = "true" ]
 then
-	echo "Prepárese para la misión agente X, que la fuerza te acompañe."
+	echo "Prepárese para la misión agente X, que la fuerza te acompañe. modified"
 else
-	echo "Disfruta el planeta humano/a $nombre, trata de no morir."
+	echo "Disfruta el planeta humano/a $nombre, trata de no morir. modified"
 fi
 echo "..."
 sleep 10
